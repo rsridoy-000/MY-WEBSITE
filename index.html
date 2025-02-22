@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio Website | RIDOY</title>
-
+    <link rel="shortcut icon" type="x-icon" href="Logo.png">
     <!-- box icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
     <!-- custom css -->
     <link rel="stylesheet" href="style.css">
   </head>
@@ -19,13 +21,15 @@
       <a href="#" class="logo"><span class="multiple-text2"></span></a>
     
         <nav class="navbar">
-        <a href="#home" style="--i:1;">Home</a>
-        <a href="#about" style="--i:2;">About</a>
-        <a href="#services" style="--i:3;">Services</a>
-        <a href="#portfolio" style="--i:4;">Portfolio</a>
-        <a href="#contact" style="--i:5;">Contacts</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services"">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contacts</a>
     </nav>
-    
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class='bx bx-menu'></i>
+  </div>
  </header>
     <!-- home section design -->
    <section class="home"id="home">
@@ -33,7 +37,7 @@
       <h3> YES, I AM</h3>
        <h1>R S RIDOY</h1>
        <h3>And I'm a <span class="multiple-text"></span></h3>
-       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam vel quasi voluptatibus quos. Unde necessitatibus non ab,in velit odio reiciendis vero enim nostrum, fugiat dolores ratione accusamus! Amet, nisi.</p>
+       <p>My name is R S RIDOY. I'm currently a 5th-semester student of the Computer Science Department at Jessore Polytechnic Institute, and I'm the captain of my class. I aspire to become a skilled Web Apps Developer. I have gained proficiency in HTML, CSS, and JavaScript, and I'm actively working with these technologies.</p>
 
        <div class="social-media">
         <a href="https://www.facebook.com/RS.Khan012/"><i class='bx bxl-facebook'></i></a>
@@ -42,8 +46,8 @@
         <a href="https://wa.me/8801787026652"><i class='bx bxl-whatsapp' ></i></a>
        </div>
 
-       <a href="#" class="btn">INSTALL </a>
-      <a href="#" class="btn">LEAVE </a>
+       <a href="https://play.google.com/store/apps?hl=en" class="btn">INSTALL </a>
+      <a href="https://www.google.com" class="btn">LEAVE </a>
       </div>
 
       <div class="home-image">
@@ -57,12 +61,12 @@
     <div class="about-img">
       <img src="rsr.jpg" alt="" class="pic" height="280px"">
     </div>
-
+    
     <div class="about-content">
       <h2 class="heading1">About <span>Me</span></h2>
       <h3>Frontend <span class="span2">Developer</span></h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates inventore incidunt accusamus consequuntur vitae veritatis sapiente perspiciatis. Esse praesentium perferendis, reprehenderit molestias eligendi non laudantium iure, blanditiis voluptas nisi voluptatibus inventore modi ad excepturi nulla incidunt vel quaerat dolores sunt. Laboriosam repellat labore hic officia optio?</p>
-      <a href="" class="btn">Read More</a>
+      <p>My name is R S Ridoy. I live in Ramnagar village, under Kaliganj Thana in Jhenaidah district. I completed my secondary education in the science stream from K.B. Secondary School and passed with a GPA of 5.00 in SSC. I got admitted to Jessore Polytechnic Institute in the Computer Technology,and I am currently a 5th-semester student.I am a Frontend Developer. Currently, I am preparing to learn React.js, Next.js, and Python (Django).</p>
+      <a href="#services" class="btn">Read More</a>
     </div>
    </section>
 
@@ -102,7 +106,7 @@
     <div class="project-container">
         <h2>New Project</h2>
         <div class="project">
-            <img src="projectq.png" alt="Project Screenshot">
+            <img src="project.png" alt="Project Screenshot">
             <div class="project-details">
                 <h1 style="font-size: xx-large;font-family: Arial;">Portfolio Website</h3><br>
                 <p style="font-size: medium;">This project is a responsive portfolio website built with HTML, CSS, and JavaScript. It features modern design, smooth animations, and a contact form.</p>
@@ -112,7 +116,7 @@
                     <li>Contact form integration</li>
                 </ul>
                 <p style="font-size: medium;"><strong>Technologies Used:</strong> <span style="color: rgb(91, 206, 8);">HTML, CSS, JavaScript</span></p>
-               <div class="buttons">
+                <div class="buttons">
                     <a href="https://rsridoy-000.github.io/Webkhata/" target="_blank" class="btn">Live Demo</a>
                     <a href="https://github.com/rsridoy-000" target="_blank" class="btn">GitHub</a>
                 </div>
@@ -131,7 +135,7 @@
                 <div class="contact-info">
                     <p> <strong>Email:</strong> rsridoykhan000@gmail.com</p>
                     <p> <strong>Phone:</strong> +00 1787026652</p>
-                </div>
+                </div><br>
                 
                 <form class="contact-form">
                     <input type="text" placeholder="Enter your name" required>
