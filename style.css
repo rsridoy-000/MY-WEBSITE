@@ -23,9 +23,6 @@
 }
 html{
     font-size: 62.5%;
-    
-} 
-html {
    scroll-behavior: smooth;
  }
  
@@ -33,6 +30,10 @@ html {
 body{
     background: var(--bg-color);
     color: var(--text-color);
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+   
 }
 
 section{
@@ -70,15 +71,36 @@ section{
     opacity: 0;
     animation: slideRight .5s ease forwards;
     animation-delay: calc(.1s * var(--i));
+    position: relative;
+   text-decoration: none;
 }
 
 .navbar a:hover{
     color: var(--dot-color);
 }
 
-.navbar a.active{
-   color: var(--main-color);
+.navbar a::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: -5px;
+   width: 100%;
+   height: 2px;
+   background-color: var(--dot-color);
+   transform: scaleX(0);
+   transition: transform 0.3s ease-in-out;
 }
+
+.navbar a:hover::after {
+   transform: scaleX(1);
+}
+.hamburger {
+   font-size: 24px;
+   color: var(--text-color);
+   cursor: pointer;
+   display: none;
+}
+
 
 .pic{
     width: 300px;
@@ -133,7 +155,7 @@ section{
  }
 
  .home-content p{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1s;
@@ -218,7 +240,7 @@ section{
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background: black;
+    background: rgb(26, 25, 25);
  }
 
  .heading1{
@@ -242,7 +264,7 @@ section{
  }
 
  .about-content p{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin: 2rem 0 3rem;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
@@ -266,14 +288,7 @@ section{
  .span3{
     color: var(--main-color);
  }
-/* General Styles */
-body {
-   font-family: Arial, sans-serif;
-   margin: 0;
-   padding: 0;
-   background-color: #1a1a1a;
-   color: #ffffff;
-}
+
 
 /* Services Section */
 #services {
@@ -286,6 +301,7 @@ body {
    font-size: 5rem;
    color: #4caf50;
    margin-bottom: 20px;
+   margin-top: 26px;
 }
 
 .services-container p {
@@ -335,14 +351,7 @@ body {
 }
 
  
-/* General Styles */
-body {
-   font-family: Arial, sans-serif;
-   margin: 0;
-   padding: 0;
-   background-color: #1a1a1a;
-   color: #ffffff;
-}
+
 
 /* Latest Project Section */
 #portfolio {
@@ -355,6 +364,7 @@ text-align: center;
    font-size: 5.5rem;
    margin-bottom: 20px;
    color: #4caf50;
+   margin-top: 26px;
 }
 
 .project {
@@ -407,15 +417,6 @@ text-align: center;
    background-color: #158947;
 }
 
-/* General Styles */
-body {
-   font-family: 'Arial', sans-serif;
-   margin: 0;
-   padding: 0;
-   background-color: #1e1e1e;
-   color: #fff;
-}
-
 .contact-section {
    padding: 50px;
    text-align: center;
@@ -424,7 +425,7 @@ body {
 
 .container {
    max-width: 800px;
-   margin: 0 auto;
+ margin: 25px auto;
 }
 
 /* Title and Subtitle */
@@ -443,11 +444,10 @@ body {
 /* Contact Info */
 .contact-info p {
    font-size: 1.9rem;
-   margin: 10px 0;
+ margin-left: 100px;
+ padding: 10px;
    color: #fff;
 }
-
-/* Contact Form */
 .contact-form {
    display: flex;
    flex-direction: column;
@@ -461,10 +461,89 @@ body {
        padding: 1rem 2%;
    }
 
-   .navbar a {
-       margin-left: 1rem;
-       font-size: 1.4rem;
-   }
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+  }
+  
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+  }
+  
+  .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: #222;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+  }
+  
+  .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: lightcyan;
+  }
+  
+  .navbar {
+      display: flex;
+      gap: 20px;
+  }
+  
+  .navbar a {
+      color: white;
+      font-size: 18px;
+      transition: 0.3s;
+  }
+  
+  .navbar a:hover {
+      color: #4caf50;
+  }
+  
+  /* Hamburger Menu Styles */
+  .hamburger {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      display: none;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+      .navbar {
+          display: none;
+          flex-direction: column;
+          background-color: #222;
+          position: absolute;
+          top: 60px;
+          right: 10%;
+          width: 200px;
+          padding: 10px;
+          border-radius: 5px;
+      }
+  
+      .navbar a {
+          padding: 10px;
+          text-align: center;
+          display: block;
+      }
+  
+      .hamburger {
+          display: block;
+      }
+  
+      .navbar.show {
+          display: flex;
+      }
+  }
+  
 
    .home {
        flex-direction: column;
@@ -535,7 +614,7 @@ body {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-   color: #b4b4b4;
+   color: #e2dfdf;
 }
 
 .contact-form button {
@@ -544,9 +623,8 @@ body {
    border: none;
    border-radius: 5px;
    color: #fff;
-   font-size: 1.9rem;
    cursor: pointer;
-   transition: background-color 0.3s;
+   transition: 0.3s;
 }
 
 .contact-form button:hover {
